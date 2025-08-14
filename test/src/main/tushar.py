@@ -1,6 +1,6 @@
 import time
 import RPi.GPIO as GPIO
-from consants import all_groups, all_off, DATA_PINS, CLOCK_PINS, LATCH_PIN
+from consants import all_groups_pattern_0, all_groups_pattern_1, all_off, DATA_PINS, CLOCK_PINS, LATCH_PIN
 
 
 
@@ -11,6 +11,8 @@ GPIO.setup(DATA_PINS[0], GPIO.OUT)
 GPIO.setup(CLOCK_PINS[0], GPIO.OUT)
 GPIO.setup(DATA_PINS[1], GPIO.OUT)
 GPIO.setup(CLOCK_PINS[1], GPIO.OUT)
+GPIO.setup(DATA_PINS[2], GPIO.OUT)
+GPIO.setup(CLOCK_PINS[2], GPIO.OUT)
 
 states = [GPIO.LOW, GPIO.HIGH]
 
@@ -35,8 +37,8 @@ def send_signal(groups):
 try:
     send_signal(all_off)
     print("*******All turned OFF********")
-    time.sleep(1)
-    send_signal(all_groups)
+    time.sleep(2)
+    send_signal(all_groups_pattern_0)
     print("***********Shifted***********")
     time.sleep(100)
 except Exception as e:
