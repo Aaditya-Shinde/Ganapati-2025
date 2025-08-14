@@ -22,13 +22,13 @@ def send_signal(groups):
     for group in groups:
         board_number = 1
         for byte in group:
-            print(f"group={group_no} board={len(group) - board_number} byte= {bin(byte)}")
+            print(f"group={group_no} board={len(group) - board_number} byte= {byte:08b}")
             i = 0
             for i in range(8):
                 bit = (byte >> (7-i)) & 1
                 GPIO.output(DATA_PINS[group_no], states[bit])
                 GPIO.output(CLOCK_PINS[group_no], GPIO.HIGH)
-                time.sleep(0.00001)
+                # time.sleep(0.00001)
                 GPIO.output(CLOCK_PINS[group_no], GPIO.LOW)
             board_number += 1
         group_no += 1
@@ -37,10 +37,12 @@ def send_signal(groups):
 try:
     send_signal(all_off)
     print("*******All turned OFF********")
-    time.sleep(2)
+    # time.sleep(1)
     send_signal(all_groups_pattern_0)
+    time.sleep(0.1)
+    send_signal(all_groups_pattern_1)
     print("***********Shifted***********")
-    time.sleep(100)
+    time.sleep(1000)
 except Exception as e:
     print('*'*50)
     print(e)
