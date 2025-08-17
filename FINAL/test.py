@@ -1,12 +1,13 @@
 import time
 import actions
-from patterns import individual
+import constants
 from copy import copy
 
 try:
     actions.setup()
+    print("on")
     while True:
-        actions.send_pattern(individual)
+        actions.send_pattern(constants.all_on)
 
 except KeyboardInterrupt:
     pass
