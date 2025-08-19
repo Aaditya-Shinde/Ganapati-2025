@@ -3,3 +3,4 @@
 INSTALL.txt
 LICENSE
 README.md
+*.pyc

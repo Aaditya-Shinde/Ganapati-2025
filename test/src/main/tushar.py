@@ -13,12 +13,12 @@ GPIO.setup(DATA_PINS[1], GPIO.OUT)
 GPIO.setup(CLOCK_PINS[1], GPIO.OUT)
 GPIO.setup(DATA_PINS[2], GPIO.OUT)
 GPIO.setup(CLOCK_PINS[2], GPIO.OUT)
-# GPIO.setup(DATA_PINS[3], GPIO.OUT)
-# GPIO.setup(CLOCK_PINS[3], GPIO.OUT)
-# GPIO.setup(DATA_PINS[4], GPIO.OUT)
-# GPIO.setup(CLOCK_PINS[5], GPIO.OUT)
-# GPIO.setup(DATA_PINS[5], GPIO.OUT)
-# GPIO.setup(CLOCK_PINS[5], GPIO.OUT)
+GPIO.setup(DATA_PINS[3], GPIO.OUT)
+GPIO.setup(CLOCK_PINS[3], GPIO.OUT)
+GPIO.setup(DATA_PINS[4], GPIO.OUT)
+GPIO.setup(CLOCK_PINS[4], GPIO.OUT)
+GPIO.setup(DATA_PINS[5], GPIO.OUT)
+GPIO.setup(CLOCK_PINS[5], GPIO.OUT)
 
 states = [GPIO.LOW, GPIO.HIGH]
 
@@ -43,7 +43,7 @@ def send_signal(groups):
 try:
     send_signal(all_off)
     print("*******All turned OFF********")
-    time.sleep(2)
+    time.sleep(1)
     send_signal(all_on)
     # time.sleep(0.1)
     # send_signal(all_groups_pattern_1)
