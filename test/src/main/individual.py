@@ -1,6 +1,7 @@
 import time
 import RPi.GPIO as GPIO
-from consants import all_on, all_off, pattern, DATA_PINS, CLOCK_PINS, LATCH_PIN
+from consants import all_on, all_off, DATA_PINS, CLOCK_PINS, LATCH_PIN
+from copy import deepcopy
 
 
 
@@ -44,9 +45,14 @@ try:
     send_signal(all_off)
     print("*******All turned OFF********")
     time.sleep(1)
-    send_signal(pattern)
-    # time.sleep(0.1)
-    # send_signal(all_groups_pattern_1)
+    base = deepcopy(all_off)
+    for g in range(6):
+        for b in range(10):
+            for l in range(8):
+                base[g][-(b+1)] |= 1<<(7-l)
+                send_signal(base)
+                input(f"Group: {g} Board: {b} LED: {l}\n next: ")
+                
     print("***********Shifted***********")
     time.sleep(1000)
 except Exception as e:

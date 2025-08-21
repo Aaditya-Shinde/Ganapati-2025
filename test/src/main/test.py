@@ -1,6 +1,6 @@
 import time
 import RPi.GPIO as GPIO
-from consants import all_on, all_off, pattern, DATA_PINS, CLOCK_PINS, LATCH_PIN
+from consants import all_on, all_off, custom, DATA_PINS, CLOCK_PINS, LATCH_PIN
 
 
 
@@ -44,7 +44,7 @@ try:
     send_signal(all_off)
     print("*******All turned OFF********")
     time.sleep(1)
-    send_signal(pattern)
+    send_signal(custom)
     # time.sleep(0.1)
     # send_signal(all_groups_pattern_1)
     print("***********Shifted***********")
