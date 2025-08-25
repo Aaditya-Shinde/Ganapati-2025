@@ -1,6 +1,6 @@
 import time
 import RPi.GPIO as GPIO
-from consants import all_on, all_off, custom, DATA_PINS, CLOCK_PINS, LATCH_PIN
+from consants import *
 
 
 
@@ -43,8 +43,8 @@ def send_signal(groups):
 try:
     send_signal(all_off)
     print("*******All turned OFF********")
-    time.sleep(1)
-    send_signal(custom)
+    send_signal(pattern)
+    print("sector pattern")
     # time.sleep(0.1)
     # send_signal(all_groups_pattern_1)
     print("***********Shifted***********")

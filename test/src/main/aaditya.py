@@ -40,9 +40,9 @@ def send_signal(groups):
         group_no += 1
     GPIO.output(LATCH_PIN, GPIO.HIGH)
 
-DELAY = 30
+DELAY = 2
 try:
-    for i in range(4):
+    while True:
         send_signal(all_off)
         print("*******All turned OFF********")
         send_signal(all_on)
