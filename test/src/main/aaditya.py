@@ -33,8 +33,8 @@ def send_signal(groups):
             for i in range(8):
                 bit = (byte >> (7-i)) & 1
                 GPIO.output(DATA_PINS[group_no], states[bit])
-                GPIO.output(CLOCK_PINS[group_no], GPIO.LOW)
                 GPIO.output(CLOCK_PINS[group_no], GPIO.HIGH)
+                GPIO.output(CLOCK_PINS[group_no], GPIO.LOW)
             board_number += 1
         group_no += 1
     GPIO.output(LATCH_PIN, GPIO.HIGH)
