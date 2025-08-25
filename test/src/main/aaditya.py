@@ -23,7 +23,7 @@ GPIO.setup(CLOCK_PINS[5], GPIO.OUT)
 states = [GPIO.LOW, GPIO.HIGH]
 
 def send_signal(groups):
-    GPIO.output(LATCH_PIN, GPIO.LOW)
+    GPIO.output(LATCH_PIN, GPIO.LOW) 
     group_no = 0
     for group in groups:
         board_number = 1
@@ -34,18 +34,29 @@ def send_signal(groups):
                 bit = (byte >> (7-i)) & 1
                 GPIO.output(DATA_PINS[group_no], states[bit])
                 GPIO.output(CLOCK_PINS[group_no], GPIO.HIGH)
+                # time.sleep(0.00001)
                 GPIO.output(CLOCK_PINS[group_no], GPIO.LOW)
             board_number += 1
         group_no += 1
     GPIO.output(LATCH_PIN, GPIO.HIGH)
 
+DELAY = 30
 try:
-    print("*******All turned OFF********")
-    send_signal(all_off)
-    send_signal(all_on)
-    time.sleep(1.5)
+    for i in range(4):
+        send_signal(all_off)
+        print("*******All turned OFF********")
+        send_signal(all_on)
+        print("all_on")
+        time.sleep(DELAY)
+        send_signal(all_off)
+        print("*******All turned OFF********")
+        send_signal(pattern)
+        print("sector pattern")
+        time.sleep(DELAY)
+    # time.sleep(0.1)
+    # send_signal(all_groups_pattern_1)
     print("***********Shifted***********")
-    input("Press enter to exit...")
+    time.sleep(1000)
 except Exception as e:
     print('*'*50)
     print(e)
@@ -53,5 +64,4 @@ except Exception as e:
 finally:
     send_signal(all_off)
     GPIO.cleanup()
-    time.sleep(1)
     print("Cleaned")
