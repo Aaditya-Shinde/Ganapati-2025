@@ -1,6 +1,7 @@
 import time
 import RPi.GPIO as GPIO
 from consants import *
+import pygame
 
 
 
@@ -40,8 +41,11 @@ def send_signal(groups):
         group_no += 1
     GPIO.output(LATCH_PIN, GPIO.HIGH)
 
+# pygame.mixer.init()
+# pygame.mixer.music.load("/home/pi/Desktop/New/Ganapati/FINAL/1 Ganraya Ganraya Ganraya Ho.mp3")
+# pygame.mixer.music.play()
 DELAY = 2
-patterns = [all_on, alt_sector_2layer, flower, alt_sector_3layer, sectors]
+patterns = [all_on, flower, alt_sector_3layer, sectors]
 try:
     while True:
         for i in range(len(patterns)):

@@ -40,18 +40,98 @@ def send_signal(groups):
         group_no += 1
     GPIO.output(LATCH_PIN, GPIO.HIGH)
 
-DELAY = 2
+# = 2
+DELAY = 0.2
 try:
-    send_signal(all_off)
-    print("*******All turned OFF********")
-    send_signal(all_on)
-    print("all_on")
-    time.sleep(DELAY)
-    send_signal(all_off)
-    print("*******All turned OFF********")
-    send_signal(pattern)
-    print("pattern")
-    time.sleep(1000)
+   send_signal(all_off)
+   print("*******All turned OFF********")
+   send_signal(all_on)
+   print("all_on")
+   send_signal(all_off)
+   print("*******All turned OFF********")
+   send_signal(pattern)
+   print("pattern")
+   time.sleep(1000)
+    # time.sleep(5)
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l1)
+    # print("l1")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l2)
+    # print("l2")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l3)
+    # print("l3")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l4)
+    # print("l4")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l5)
+    # print("l5")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l6)
+    # print("l6")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l7)
+    # print("l7")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l8)
+    # print("l8")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l9)
+    # print("l9")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l9)
+    # print("l9")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l9)
+    # print("l9")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l9)
+    # print("l9")
+    # time.sleep(DELAY)
+
+    # send_signal(all_off)
+    # print("*******All turned OFF********")
+    # send_signal(l9)
+    # print("l9")
+
+    # time.sleep(1000)
+   
 except Exception as e:
     print('*'*50)
     print(e)
