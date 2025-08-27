@@ -5,3 +5,5 @@ You can see more about this project on [my youtube channel](https://www.youtube.
 You can also learn more about the stages by looking at [the Summer of Making log](https://summer.hackclub.com/projects/7750)
 
 The code for the full version is in FINAL. 16 LEDS and 8 LEDS were just for testing
+
+Only the pattern_generator.py was made by AI
