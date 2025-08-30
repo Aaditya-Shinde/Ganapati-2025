@@ -292,6 +292,7 @@ try:
    send_signal(all_off)
 
 #Actual tyawn music starts
+#First
    send_signal(ray_pair_1)
    time.sleep(0.45)
    send_signal(all_off)
@@ -449,7 +450,22 @@ try:
    send_signal(all_off)
    
                
-   
+#Second
+   send_signal(adding_circles_going_out_stage1)
+   time.sleep(0.45)
+   send_signal(all_off)
+   send_signal(adding_circles_going_out_stage2)
+   time.sleep(0.45)
+   send_signal(all_off)
+   send_signal(ray_pair_1n2n3)
+   time.sleep(0.45)
+   send_signal(all_off)
+   send_signal(ray_pair_1n2n3n4)
+   time.sleep(0.5)
+   send_signal(all_off)
+   send_signal(ray_pair_1n2n3n4n5)
+   time.sleep(0.5)
+   send_signal(all_off)
 
 
    ##########
