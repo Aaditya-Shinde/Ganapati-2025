@@ -1,8 +1,0 @@
-Spidev is the library used to control LEDS
-We need to enable it in our Raspberry PI
-In terminal, run the following command: 
-sudo raspi-config
-Navigate to the Interfaces tab and enable SPI. 
-Reboot after that.
-In terminal, run the following command:
-pip3 install spidev
